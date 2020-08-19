@@ -1,5 +1,5 @@
 let values = JSON.parse(localStorage.getItem('game')); //Variable save in storage with game data
-let check = !values.check; //Variable for check if the pc play
+let check = values.check; //Variable for check if the pc play
 
 //The variables with '..PC' are using only if the pc play
 let valuesPC = [[5, 4, 3, 2, 1], [5, 3, 3, 2, 1], [5, 3, 3, 2, 1], [4, 3, 2, 2, 1], [4, 3, 2, 2, 1],
@@ -19,7 +19,7 @@ let rankPC = [['0', 99999], ['0', 0]]; //Variable for minimum and maximum
 if (check) {
   document.getElementById('infoPC').style.display = 'block';
   document.getElementById('resultVersus').style.display = 'flex';
-  document.getElementById('pnlGamePC').style.display = 'grid';
+  document.getElementById('pnlGamePC').style.display = 'flex';
 }
 
 //Principal function
@@ -52,6 +52,9 @@ async function generateValues() {
     //Modify the value estimate
     document.querySelector('#pnlGameUser .result-obtenido').innerHTML = totalRandom / ((i + 1) * 5);
 
+    //Modify the value average
+    document.querySelector('#pnlGameUser #pnlGameUserPromedio h4').innerHTML = totalUser / (i + 1);
+
     //Send cycle to list HTML for User
     var user = document.getElementById('user');
     user.prepend(elementGenerate);
@@ -77,6 +80,9 @@ async function generateValues() {
 
       //Modify the value estimate
       document.querySelector('#pnlGamePC .result-obtenido').innerHTML = totalRandom / ((i + 1) * 5);
+
+      //Modify the value average
+      document.querySelector('#pnlGamePC #pnlGamePCPromedio h4').innerHTML = totalPC / (i + 1);
 
       //Send cycle to list HTML for PC
       var pc = document.getElementById('pc');

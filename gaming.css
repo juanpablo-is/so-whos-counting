@@ -95,22 +95,36 @@ h4 {
 }
 
 #pnlGame h2 {
-    font-size: 20px;
+    font-size: 18px;
+    margin: 10px 0;
 }
 
-#pnlGameUser, #pnlGamePC {
+#pnlGameUser {
+    display: flex;
+    flex-direction: column;
+}
+
+#pnlUserF, #pnlPCF {
+    height: 60%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-#pnlGamePC{
+
+#pnlGameUserPromedio, #pnlGamePCPromedio {
+    width: 100%;
+    height: 40%;
+}
+
+#pnlGamePC {
     border-top: 2px solid #1e1e1e;
 }
 
 #pnlGamePC {
     display: none;
+    flex-direction: column;
 }
 
-#pnlGameUser div, #pnlGamePC div {
+#pnlUserF div, #pnlPCF div, #pnlGameUserPromedio, #pnlGamePCPromedio {
     display: flex;
     flex-direction: column;
     justify-content: center;
