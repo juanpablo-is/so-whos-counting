@@ -100,8 +100,22 @@ h4 {
 }
 
 #pnlGameUser {
+    position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.message {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fuente);
+    font-size: 50px;
+    color: rgba(0, 0, 0, .1);
+    letter-spacing: 20px;
 }
 
 #pnlUserF, #pnlPCF {
@@ -120,6 +134,7 @@ h4 {
 }
 
 #pnlGamePC {
+    position: relative;
     display: none;
     flex-direction: column;
 }
