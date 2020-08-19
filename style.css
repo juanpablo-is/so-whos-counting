@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+:root {
+    --colorFondo: #f1f1f1;
+    --fuente: 'Poppins', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    font-family: var(--fuente);
+}
+
+#firstPnl {
+    background-color: var(--colorFondo);
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#firstPnl h1 {
+    cursor: pointer;
+    margin: auto;
+    font-family: var(--fuente);
+    font-size: 110px;
+    letter-spacing: 50px;
+}
+
+#firstPnl h1:hover {
+    opacity: .7;
+}
+
+#popup {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    justify-items: center;
+    align-content: center;
+    margin: auto;
+}
+
+#popup-alerta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    margin: auto;
+    width: 40%;
+}
+
+#popup-alerta h3, #popup-alerta p {
+    text-align: center;
+    padding: 5px;
+}
+
+#popup-alerta table {
+    width: 100%;
+    margin: 20px 0;
+}
+
+#popup-alerta input[type='number'] {
+    flex: 1;
+    text-align: center;
+    width: 100%;
+}
+
+#popup-alerta td {
+    text-align: center;
+}
+
+#popup-alerta label {
+    margin: 0 10px;
+}
+
+#popup-alerta input[type='submit'] {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+#popup-alerta h4 {
+    font-family: var(--fuente);
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#infoPopup {
+    display: flex;
+    margin: 10px 0;
+}
+
+#checkPc {
+    flex: 2;
+}
+
+#valueGame {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#valueGame label {
+    font-family: var(--fuente);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#valueGame input {
+    width: 100%;
+}
+
+#checkPc h4 {
+    display: inline;
+}

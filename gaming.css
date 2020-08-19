@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+:root {
+    --colorFondo: #f1f1f1;
+    --fuente: 'Poppins', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+pre {
+    font-family: var(--fuente);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+main {
+    background-color: var(--colorFondo);
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main div {
+    width: 100%;
+    height: 100%;
+}
+
+main div h2 {
+    margin: 20px 0;
+    font-family: var(--fuente);
+}
+
+#infoUser {
+    overflow: auto;
+    text-align: center;
+    border-right: 2px solid #1e1e1e;
+}
+
+#infoPC {
+    overflow: auto;
+    text-align: center;
+    display: none;
+}
+
+#infoResult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 2px solid #1f1f1f;
+}
+
+#resultVersus {
+    display: none;
+    justify-items: center;
+    align-content: center;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    border-bottom: 2px solid #1f1f1f;
+}
+
+#resultVersus div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#resultVersus h2 {
+    margin: 10px 0;
+}
+
+h4 {
+    font-family: var(--fuente);
+    font-weight: normal;
+}
+
+#pnlGame {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#pnlGame h4 {
+    font-size: 18px;
+}
+
+#pnlGame h2 {
+    font-size: 20px;
+}
+
+#pnlGameUser, #pnlGamePC {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+#pnlGamePC{
+    border-top: 2px solid #1e1e1e;
+}
+
+#pnlGamePC {
+    display: none;
+}
+
+#pnlGameUser div, #pnlGamePC div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: .1px solid rgba(0, 0, 0, .1);
+}
