@@ -63,6 +63,10 @@ label {
     width: 40%;
 }
 
+#popup-alerta h3 {
+    font-family: var(--fuente);
+}
+
 #popup-alerta h3, #popup-alerta p {
     text-align: center;
     padding: 5px;
@@ -96,6 +100,8 @@ label {
     border-radius: 10px;
     outline: none;
     cursor: pointer;
+    background-color: #3851BC;
+    color: white;
 }
 
 #popup-alerta h4 {
