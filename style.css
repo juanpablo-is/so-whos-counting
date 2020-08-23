@@ -100,8 +100,6 @@ label {
     border-radius: 10px;
     outline: none;
     cursor: pointer;
-    background-color: #3851BC;
-    color: white;
 }
 
 #popup-alerta h4 {
@@ -138,4 +136,17 @@ label {
 
 #checkPc h4 {
     display: inline;
+}
+
+#infoButton {
+    display: flex;
+}
+
+#infoButton input {
+    margin: 0px 20px !important;
+}
+
+#infoButton #submitGame {
+    background-color: #3851BC;
+    color: white;
 }
