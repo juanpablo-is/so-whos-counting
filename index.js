@@ -41,7 +41,7 @@ btnGame.addEventListener('click', function (e) {
     }
 
     localStorage.setItem('game', JSON.stringify(valuesGame));
-    window.open('gaming.html', '_self');
+    window.open('playing.html', '_self');
 });
 
 //Function generate random for table distribution
@@ -52,7 +52,7 @@ function processRandomTable() {
     randomNumber(document.querySelectorAll('.clm-4'), 2);
 }
 
-//For one column set value random range
+//For one column set value ran
 function randomNumber(column, numMax) {
     for (let i = 0; i < column.length; i++) {
         column[i].value = Math.floor(Math.random() * numMax + 1);
