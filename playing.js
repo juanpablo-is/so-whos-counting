@@ -107,30 +107,34 @@ function processSimulate() {
   fieldsUser = ['', '', '', '', ''];
   fieldsPC = ['', '', '', '', ''];
 
+  //Create cycle for User
+  let fieldsEmptyUser = [];
+  let aux = 0;
+  for (let k = 0; k < 5; k++) {
+    if (fieldsUser[k] === '')
+      fieldsEmptyUser.push(aux);
+    aux++;
+  }
+
+  //Create cycle for PC
+  let fieldsEmptyPC = [];
+  if (check) {
+    aux = 0;
+    for (let k = 0; k < 5; k++) {
+      if (fieldsPC[k] === '')
+        fieldsEmptyPC.push(aux);
+      aux++;
+    }
+  }
+
   for (let j = 0; j < 5; j++) {
     let rand = Math.floor(Math.random() * 10);
     totalRandom += rand;
 
-    //Create cycle for User
-    let fieldsEmptyUser = [];
-    let aux = 0;
-    for (let k = 0; k < 5; k++) {
-      if (fieldsUser[k] === '')
-        fieldsEmptyUser.push(aux);
-      aux++;
-    }
-    fieldsUser[fieldsEmptyUser[values.values[rand][j] - 1]] = rand;
+    fieldsUser[fieldsEmptyUser.splice(values.values[rand][j] - 1, 1)] = rand;
 
     if (check) {
-      //Create cycle for PC
-      let fieldsEmptyPC = [];
-      aux = 0;
-      for (let k = 0; k < 5; k++) {
-        if (fieldsPC[k] === '')
-          fieldsEmptyPC.push(aux);
-        aux++;
-      }
-      fieldsPC[fieldsEmptyPC[valuesPC[rand][j] - 1]] = rand;
+      fieldsPC[fieldsEmptyPC.splice(valuesPC[rand][j] - 1, 1)] = rand;
     }
   }
 }
