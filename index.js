@@ -5,7 +5,7 @@ var btnRandom = document.getElementById('submitRandom');
 var valuesGame = new Object;
 
 //Call process that create table random
-processRandomTable();
+processRandomTable(1);
 
 //Event for btn 'Jugar', display popup table
 btnJugar.addEventListener('click', function () {
@@ -45,11 +45,11 @@ btnGame.addEventListener('click', function (e) {
 });
 
 //Function generate random for table distribution
-function processRandomTable() {
-    randomNumber(document.querySelectorAll('.clm-1'), 5);
-    randomNumber(document.querySelectorAll('.clm-2'), 4);
-    randomNumber(document.querySelectorAll('.clm-3'), 3);
-    randomNumber(document.querySelectorAll('.clm-4'), 2);
+function processRandomTable(option = undefined) {
+    randomNumber(document.querySelectorAll('.clm-1'), option == undefined ? 5 : 1);
+    randomNumber(document.querySelectorAll('.clm-2'), option == undefined ? 4 : 1);
+    randomNumber(document.querySelectorAll('.clm-3'), option == undefined ? 3 : 1);
+    randomNumber(document.querySelectorAll('.clm-4'), option == undefined ? 2 : 1);
 }
 
 //For one column set value ran

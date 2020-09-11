@@ -107,18 +107,8 @@ function processSimulate() {
   fieldsUser = ['', '', '', '', ''];
   fieldsPC = ['', '', '', '', ''];
 
-  //Create cycle for User
-  let fieldsEmptyUser = [];
-  for (let k = 0; k < 5; k++)
-    if (fieldsUser[k] === '')
-      fieldsEmptyUser.push(k);
-
-  //Create cycle for PC
-  let fieldsEmptyPC = [];
-  if (check)
-    for (let k = 0; k < 5; k++)
-      if (fieldsPC[k] === '')
-        fieldsEmptyPC.push(k);
+  let fieldsEmptyUser = [0, 1, 2, 3, 4];
+  let fieldsEmptyPC = [0, 1, 2, 3, 4];
 
   for (let j = 0; j < 5; j++) {
     let rand = Math.floor(Math.random() * 10);
