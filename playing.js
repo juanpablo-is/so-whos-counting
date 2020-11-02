@@ -1,9 +1,14 @@
-let values = JSON.parse(localStorage.getItem('game')); //Variable save in storage with game data
-let check = values.check; //Variable for check if the pc play
+// Check params URL
+var url = new URL(window.location.href);
+var valueParams = url.searchParams.get("values");
 
 //The variables with '..PC' are using only if the pc play
 let valuesPC = [[5, 4, 3, 2, 1], [5, 3, 3, 2, 1], [5, 3, 3, 2, 1], [4, 3, 2, 2, 1], [4, 3, 2, 2, 1],
 [3, 2, 2, 1, 1], [3, 2, 1, 1, 1], [2, 2, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]];  //Distribution table for PC
+
+let values = valueParams ? transformValue(valueParams) : JSON.parse(localStorage.getItem('game')); //Variable save in storage with game data
+let check = values.check ?? true; //Variable for check if the pc play
+let cycle = values.cycle ?? 1000;
 
 let fieldsUser = []; //Cycle variable for the 5 places number
 let fieldsPC = []; //Cycle variable for the 5 places number
@@ -26,7 +31,7 @@ if (check) {
 generateValues();
 
 async function generateValues() {
-  for (let i = 0; i < values.cycle; i++) {
+  for (let i = 0; i < cycle; i++) {
 
     setTimeout(() => {
       //Call function process simulate
@@ -119,4 +124,12 @@ function processSimulate() {
     if (check)
       fieldsPC[fieldsEmptyPC.splice(valuesPC[rand][j] - 1, 1)] = rand;
   }
+}
+
+function transformValue(valueParams) {
+  let values = JSON.parse(valueParams);
+  if (values.length != 10)
+    return JSON.parse(localStorage.getItem('game')) ?? { values: valuesPC };
+
+  return { values: values };
 }
